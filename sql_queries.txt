@@ -1,0 +1,11 @@
+Activities:
+
+connection_mm.query('SELECT *, activityID AS activity_id, type AS activity_type FROM activities ' +
+    'WHERE userID = ' + '\"' + userID + '\"' + " AND endDate > " + startDateTime +
+		" AND endDate < " + endDateTime + ' ORDER BY endDate ASC;', function(err1, activities, fields) {
+
+Locations:
+
+connection_mm.query('SELECT * FROM locations WHERE userID = ' + '\"' + userID +
+  '\"' + " AND timestamp > " + startDateTime + " AND timestamp < " + endDateTime +
+  ' ORDER BY timestamp ASC;', function(err2, locations, fields) {
